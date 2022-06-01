@@ -3,12 +3,12 @@ public class MyFirstProgram {
 	public static void main(String[] args) {
 
 		System.out.println("Hello world");
-		Point p1 = new Point(1,1);
-		Point p2 = new Point(3,5);
-		System.out.println("Distance between point 1 (x = " + p1.x + ", y = " + p1.y + ") and point 2 (x = " + p2.x +", y = " + p2.y + ") is equal " + distance(p1,p2));
-	}
-	public static double distance(Point p1, Point p2){
-		return Math.sqrt(Math.pow((p2.x-p1.x),2) + Math.pow((p2.y-p1.y),2));
+		/*
+		 Point p1 = new Point(1,1);
+		 Point p2 = new Point(3,5);
+		*/
+		TwoPoints p1p2 = new TwoPoints(1,1,3,5);
+		System.out.println("Distance between point 1 (x = " + p1p2.x1 + ", y = " + p1p2.y1 + ") and point 2 (x = " + p1p2.x2 +", y = " + p1p2.y2 + ") is equal " + p1p2.distance());
 	}
 
 }
