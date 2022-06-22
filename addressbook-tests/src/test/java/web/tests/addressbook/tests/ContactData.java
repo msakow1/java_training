@@ -1,4 +1,4 @@
-package web.tests.addressbook;
+package web.tests.addressbook.tests;
 
 public class ContactData {
   private final String firstname;
