@@ -27,4 +27,7 @@ public class GroupHelper extends HelperBase {
   public void createNewGroup() {
     click(By.name("new"));
   }
+
+  public void selectGroups() { click(By.name("selected[]")); }
+
 }
