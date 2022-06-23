@@ -1,6 +1,8 @@
 package web.tests.addressbook.tests;
 
 import org.testng.annotations.*;
+import web.tests.addressbook.model.ContactData;
+import web.tests.addressbook.model.ContactGroupData;
 
 public class ContactCreationTest extends TestBase{
 

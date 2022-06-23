@@ -3,7 +3,7 @@ package web.tests.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import web.tests.addressbook.tests.ContactGroupData;
+import web.tests.addressbook.model.ContactGroupData;
 
 public class ContactHelper extends HelperBase {
 

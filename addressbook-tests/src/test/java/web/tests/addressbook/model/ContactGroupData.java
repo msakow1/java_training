@@ -1,6 +1,8 @@
-package web.tests.addressbook.tests;
+package web.tests.addressbook.model;
 
-public class ContactData {
+import web.tests.addressbook.model.ContactData;
+
+public class ContactGroupData {
   private final String firstname;
   private final String middlename;
   private final String lastname;
@@ -23,28 +25,28 @@ public class ContactData {
   private final String phone2;
   private final String notes;
 
-  public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String home_page, String birth_day, String birth_month, String birth_year, String address2, String phone2, String notes) {
-    this.firstname = firstname;
-    this.middlename = middlename;
-    this.lastname = lastname;
-    this.nickname = nickname;
-    this.title = title;
-    this.company = company;
-    this.address = address;
-    this.home_phone = home_phone;
-    this.mobile_phone = mobile_phone;
-    this.work_phone = work_phone;
-    this.fax = fax;
-    this.email = email;
-    this.email2 = email2;
-    this.email3 = email3;
-    this.home_page = home_page;
-    this.birth_day = birth_day;
-    this.birth_month = birth_month;
-    this.birth_year = birth_year;
-    this.address2 = address2;
-    this.phone2 = phone2;
-    this.notes = notes;
+  public ContactGroupData(ContactData contactData) {
+    this.firstname = contactData.getFirstname();
+    this.middlename = contactData.getMiddlename();
+    this.lastname = contactData.getLastname();
+    this.nickname = contactData.getNickname();
+    this.title = contactData.getTitle();
+    this.company = contactData.getCompany();
+    this.address = contactData.getAddress();
+    this.home_phone = contactData.getHome_phone();
+    this.mobile_phone = contactData.getMobile_phone();
+    this.work_phone = contactData.getWork_phone();
+    this.fax = contactData.getFax();
+    this.email = contactData.getEmail();
+    this.email2 = contactData.getEmail2();
+    this.email3 = contactData.getEmail3();
+    this.home_page = contactData.getHome_page();
+    this.birth_day = contactData.getBirth_day();
+    this.birth_month = contactData.getBirth_month();
+    this.birth_year = contactData.getBirth_year();
+    this.address2 = contactData.getAddress2();
+    this.phone2 = contactData.getPhone2();
+    this.notes = contactData.getNotes();
   }
 
   public String getFirstname() {
