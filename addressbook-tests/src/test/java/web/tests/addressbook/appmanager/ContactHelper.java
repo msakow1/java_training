@@ -50,16 +50,17 @@ public class ContactHelper extends HelperBase {
     //wd.findElement(By.name("ayear")).clear();
     //wd.findElement(By.name("ayear")).sendKeys("2020");
     //wd.findElement(By.name("theform")).click();
-    wd.findElement(By.name("new_group")).click();
-    new Select(wd.findElement(By.name("new_group"))).selectByVisibleText("[none]");
-    wd.findElement(By.xpath("//option[@value='[none]']")).click();
+    //wd.findElement(By.name("new_group")).click();
+    //new Select(wd.findElement(By.name("new_group"))).selectByVisibleText("[none]");
+    //wd.findElement(By.xpath("//option[@value='[none]']")).click();
     type(By.name("address2"),contactGroupData.getAddress2());
     type(By.name("phone2"),contactGroupData.getPhone2());
     type(By.name("notes"),contactGroupData.getNotes());
   }
 
+
   public void createNewContact() {
-    wd.findElement(By.linkText("add new")).click();
+    click(By.linkText("add new"));
   }
 
   public void selectContact() { click(By.name("selected[]")); }
@@ -67,5 +68,9 @@ public class ContactHelper extends HelperBase {
   public void deleteContact() { click(By.xpath("//input[@type='button' and @onclick='DeleteSel()']")); }
 
   public void acceptPopupAlert() { wd.switchTo().alert().accept(); }
+
+  public void editContact() { click(By.xpath("//table/tbody/tr[2]//img[@title='Edit']")); }
+
+  public void updateContact() { click(By.name("update")); }
 
 }
