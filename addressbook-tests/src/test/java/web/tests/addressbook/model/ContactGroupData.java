@@ -21,6 +21,8 @@ public class ContactGroupData {
   private final String birth_day;
   private final String birth_month;
   private final String birth_year;
+
+  private final String group;
   private final String address2;
   private final String phone2;
   private final String notes;
@@ -44,6 +46,7 @@ public class ContactGroupData {
     this.birth_day = contactData.getBirth_day();
     this.birth_month = contactData.getBirth_month();
     this.birth_year = contactData.getBirth_year();
+    this.group = contactData.getGroup();
     this.address2 = contactData.getAddress2();
     this.phone2 = contactData.getPhone2();
     this.notes = contactData.getNotes();
@@ -120,6 +123,8 @@ public class ContactGroupData {
   public String getBirth_year() {
     return birth_year;
   }
+
+  public String getGroup() {  return group; }
 
   public String getAddress2() {
     return address2;

@@ -3,6 +3,7 @@ package web.tests.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import web.tests.addressbook.model.ContactData;
 import web.tests.addressbook.model.ContactGroupData;
 
 public class ContactHelper extends HelperBase {
@@ -50,6 +51,9 @@ public class ContactHelper extends HelperBase {
     //wd.findElement(By.name("ayear")).clear();
     //wd.findElement(By.name("ayear")).sendKeys("2020");
     //wd.findElement(By.name("theform")).click();
+    if (isElementPresent(By.name("new_group"))) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactGroupData.getGroup());
+    }
     //wd.findElement(By.name("new_group")).click();
     //new Select(wd.findElement(By.name("new_group"))).selectByVisibleText("[none]");
     //wd.findElement(By.xpath("//option[@value='[none]']")).click();
