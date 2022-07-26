@@ -67,6 +67,11 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
+  public void createContact(ContactGroupData contact) {
+    createNewContact();
+    fillNewContactForm(contact);
+    submitNewContactForm();
+  }
   public void selectContact() { click(By.name("selected[]")); }
 
   public void deleteContact() { click(By.xpath("//input[@type='button' and @onclick='DeleteSel()']")); }
@@ -77,4 +82,7 @@ public class ContactHelper extends HelperBase {
 
   public void updateContact() { click(By.name("update")); }
 
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }
