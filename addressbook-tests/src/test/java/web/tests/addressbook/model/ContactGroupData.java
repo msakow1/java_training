@@ -3,6 +3,7 @@ package web.tests.addressbook.model;
 import web.tests.addressbook.model.ContactData;
 
 public class ContactGroupData {
+  private Integer id;
   private final String firstname;
   private final String middlename;
   private final String lastname;
@@ -52,7 +53,34 @@ public class ContactGroupData {
     this.notes = contactData.getNotes();
   }
 
-  public String getFirstname() {
+  public ContactGroupData(ContactData contactData) {
+    this.id = contactData.getId();
+    this.firstname = contactData.getFirstname();
+    this.middlename = contactData.getMiddlename();
+    this.lastname = contactData.getLastname();
+    this.nickname = contactData.getNickname();
+    this.title = contactData.getTitle();
+    this.company = contactData.getCompany();
+    this.address = contactData.getAddress();
+    this.home_phone = contactData.getHome_phone();
+    this.mobile_phone = contactData.getMobile_phone();
+    this.work_phone = contactData.getWork_phone();
+    this.fax = contactData.getFax();
+    this.email = contactData.getEmail();
+    this.email2 = contactData.getEmail2();
+    this.email3 = contactData.getEmail3();
+    this.home_page = contactData.getHome_page();
+    this.birth_day = contactData.getBirth_day();
+    this.birth_month = contactData.getBirth_month();
+    this.birth_year = contactData.getBirth_year();
+    this.group = contactData.getGroup();
+    this.address2 = contactData.getAddress2();
+    this.phone2 = contactData.getPhone2();
+    this.notes = contactData.getNotes();
+  }
+
+
+    public String getFirstname() {
     return firstname;
   }
 
@@ -137,4 +165,6 @@ public class ContactGroupData {
   public String getNotes() {
     return notes;
   }
+
+
 }
