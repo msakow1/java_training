@@ -78,6 +78,7 @@ public class ContactData {
     this.address2 = address2;
     this.phone2 = phone2;
     this.notes = notes;
+    this.id = null;
   }
 
   public Integer getId() {
@@ -99,6 +100,7 @@ public class ContactData {
   public String getNickname() {
     return nickname;
   }
+
 
   public String getTitle() {
     return title;
@@ -169,6 +171,9 @@ public class ContactData {
   public String getNotes() {
     return notes;
   }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
   @Override
   public String toString() {
@@ -184,7 +189,7 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(id, that.id);
+    return Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) &&  id == that.id ;
   }
 
   @Override

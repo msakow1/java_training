@@ -53,7 +53,7 @@ public class ContactGroupData {
     this.notes = contactData.getNotes();
   }
 
-  public ContactGroupData(ContactData contactData) {
+ /* public ContactGroupData(ContactData contactData) {
     this.id = contactData.getId();
     this.firstname = contactData.getFirstname();
     this.middlename = contactData.getMiddlename();
@@ -77,7 +77,7 @@ public class ContactGroupData {
     this.address2 = contactData.getAddress2();
     this.phone2 = contactData.getPhone2();
     this.notes = contactData.getNotes();
-  }
+  }*/
 
 
     public String getFirstname() {
