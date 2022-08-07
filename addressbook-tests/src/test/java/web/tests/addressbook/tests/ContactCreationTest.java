@@ -1,12 +1,10 @@
 package web.tests.addressbook.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 import web.tests.addressbook.model.ContactData;
-import web.tests.addressbook.model.ContactGroupData;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Comparator;
 import java.util.List;
 
 public class ContactCreationTest extends TestBase{
@@ -19,14 +17,11 @@ public class ContactCreationTest extends TestBase{
     app.getContactHelper().createContact(contact);
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(),before.size() + 1);
-    int max = 0;
-    for ( ContactData l:after){
-      if (l.getId()  > max){max = l.getId();}
-    }
-    contact.setId(max);
     before.add(contact);
-    Assert.assertEquals(new HashSet<Object>(after),new HashSet<Object> (before));
-
+    Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(),c2.getId());
+    before.sort(byId);
+    after.sort(byId);
+    Assert.assertEquals(after,before);
   }
 
 

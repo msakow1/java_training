@@ -2,11 +2,9 @@ package web.tests.addressbook.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 import web.tests.addressbook.model.GroupData;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Comparator;
 import java.util.List;
 
 public class GroupModificationTest extends TestBase{
@@ -27,7 +25,10 @@ public class GroupModificationTest extends TestBase{
     Assert.assertEquals(after.size(),before.size());
     before.remove(before.size()-1);
     before.add(group);
-    Assert.assertEquals(new HashSet<Object> (after),new HashSet<Object> (before));
+    Comparator<? super GroupData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
+    before.sort(byId);
+    after.sort(byId);
+    Assert.assertEquals(after,before);
 
   }
 }
