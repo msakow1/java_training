@@ -31,13 +31,25 @@ public class GroupHelper extends HelperBase {
     type(By.name("group_header"), groupData.getHeader());
     type(By.name("group_footer"), groupData.getFooter());
      }
-  public void createGroup(GroupData group) {
+  public void create(GroupData group) {
     createNewGroup();
     fillGroupForm(group);
     submitGroupCreation();
     returnGroupPage();
   }
 
+  public void modify(int index, GroupData group) {
+    selectGroups(index);
+    editGroup();
+    fillGroupForm(group);
+    submitGroupModification();
+    returnGroupPage();
+  }
+  public void delete(int index) {
+    selectGroups(index);
+    removeGroup();
+    returnGroupPage();
+  }
   public void createNewGroup() {
     click(By.name("new"));
   }
@@ -54,7 +66,7 @@ public class GroupHelper extends HelperBase {
     return isElementPresent(By.name("selected[]"));
   }
 
-  public List<GroupData> getGroupList() {
+  public List<GroupData> list() {
     List<GroupData> groups = new ArrayList<GroupData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     for (WebElement element:elements) {
