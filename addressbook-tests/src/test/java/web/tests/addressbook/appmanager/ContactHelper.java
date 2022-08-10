@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import web.tests.addressbook.model.ContactData;
+import web.tests.addressbook.model.Contacts;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
@@ -63,18 +63,19 @@ public class ContactHelper extends HelperBase {
     returnHomePage();
   }
 
-  public void delete(int index) {
-    selectContact(index);
+  public void deleteById(ContactData contact) {
+    selectContactById(contact.getId());
     deleteContact();
     acceptPopupAlert();
   }
-  public void modify(List<ContactData> before, int index, ContactData contact) {
-    editContact(before.get(index).getId());
+  public void modify(ContactData contact) {
+    editContact(contact.getId());
     fillNewContactForm(contact);
     updateContact();
     returnHomePage();
   }
-  public List<ContactData> list() {
+
+  /*public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
     for (WebElement element:elements) {
@@ -87,8 +88,23 @@ public class ContactHelper extends HelperBase {
       contacts.add(contact);
     }
     return contacts;
+  }*/
+  public Contacts all() {
+    Contacts contacts = new Contacts();
+    List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
+    for (WebElement element:elements) {
+      List<WebElement> td = element.findElements(By.tagName("td"));
+      String firstname = td.get(2).getText();
+      String lastname = td.get(1).getText();
+      Integer id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+      //ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
+      //ContactData contact = new ContactData(id, firstname, null, lastname,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+      contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
+    }
+    return contacts;
   }
-  public void selectContact(int index) { wd.findElements(By.name("selected[]")).get(index).click(); }
+
+  public void selectContactById(Integer id) { wd.findElement(By.cssSelector("input[value='" + id + "']")).click(); }
 
   public void deleteContact() { click(By.xpath("//input[@type='button' and @onclick='DeleteSel()']")); }
 
