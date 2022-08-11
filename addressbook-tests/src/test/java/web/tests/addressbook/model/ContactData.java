@@ -27,60 +27,72 @@ public class ContactData {
   private String group;
   private Integer id = Integer.MAX_VALUE;
 
+  private String allPhones;
+
+  private String allEmails;
+
+  public String getAllPhones() {
+    return allPhones;
+  }
+  public String getAllEmails() {
+    return allEmails;
+  }
+
+
   /*
-  public ContactData(Integer id, String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String home_page, String birth_day, String birth_month, String birth_year, String group, String address2, String phone2, String notes) {
-    this.firstname = firstname;
-    this.id = id;
-    this.lastname = lastname;
-    this.middlename = middlename;
-    this.nickname = nickname;
-    this.title = title;
-    this.company = company;
-    this.address = address;
-    this.home_phone = home_phone;
-    this.mobile_phone = mobile_phone;
-    this.work_phone = work_phone;
-    this.fax = fax;
-    this.email = email;
-    this.email2 = email2;
-    this.email3 = email3;
-    this.home_page = home_page;
-    this.birth_day = birth_day;
-    this.birth_month = birth_month;
-    this.birth_year = birth_year;
-    this.group = group;
-    this.address2 = address2;
-    this.phone2 = phone2;
-    this.notes = notes;
-  }
+    public ContactData(Integer id, String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String home_page, String birth_day, String birth_month, String birth_year, String group, String address2, String phone2, String notes) {
+      this.firstname = firstname;
+      this.id = id;
+      this.lastname = lastname;
+      this.middlename = middlename;
+      this.nickname = nickname;
+      this.title = title;
+      this.company = company;
+      this.address = address;
+      this.home_phone = home_phone;
+      this.mobile_phone = mobile_phone;
+      this.work_phone = work_phone;
+      this.fax = fax;
+      this.email = email;
+      this.email2 = email2;
+      this.email3 = email3;
+      this.home_page = home_page;
+      this.birth_day = birth_day;
+      this.birth_month = birth_month;
+      this.birth_year = birth_year;
+      this.group = group;
+      this.address2 = address2;
+      this.phone2 = phone2;
+      this.notes = notes;
+    }
 
 
-  public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String home_page, String birth_day, String birth_month, String birth_year, String group, String address2, String phone2, String notes) {
-    this.firstname = firstname;
-    this.middlename = middlename;
-    this.lastname = lastname;
-    this.nickname = nickname;
-    this.title = title;
-    this.company = company;
-    this.address = address;
-    this.home_phone = home_phone;
-    this.mobile_phone = mobile_phone;
-    this.work_phone = work_phone;
-    this.fax = fax;
-    this.email = email;
-    this.email2 = email2;
-    this.email3 = email3;
-    this.home_page = home_page;
-    this.birth_day = birth_day;
-    this.birth_month = birth_month;
-    this.birth_year = birth_year;
-    this.group = group;
-    this.address2 = address2;
-    this.phone2 = phone2;
-    this.notes = notes;
-    this.id = Integer.MAX_VALUE;
-  }
-*/
+    public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String home_phone, String mobile_phone, String work_phone, String fax, String email, String email2, String email3, String home_page, String birth_day, String birth_month, String birth_year, String group, String address2, String phone2, String notes) {
+      this.firstname = firstname;
+      this.middlename = middlename;
+      this.lastname = lastname;
+      this.nickname = nickname;
+      this.title = title;
+      this.company = company;
+      this.address = address;
+      this.home_phone = home_phone;
+      this.mobile_phone = mobile_phone;
+      this.work_phone = work_phone;
+      this.fax = fax;
+      this.email = email;
+      this.email2 = email2;
+      this.email3 = email3;
+      this.home_page = home_page;
+      this.birth_day = birth_day;
+      this.birth_month = birth_month;
+      this.birth_year = birth_year;
+      this.group = group;
+      this.address2 = address2;
+      this.phone2 = phone2;
+      this.notes = notes;
+      this.id = Integer.MAX_VALUE;
+    }
+  */
   public Integer getId() {
     return id;
   }
@@ -285,6 +297,17 @@ public class ContactData {
     this.group = group;
     return this;
   }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
+
+  public ContactData withAllEmails(String allEmails) {
+    this.allEmails = allEmails;
+    return this;
+  }
+
 
   @Override
   public String toString() {
